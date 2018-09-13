@@ -76,6 +76,6 @@
     "precommit": "lint-staged",
     "test": "jest"
   },
-  "repository": "bmosigisi/generator-redux-saga-material",
+  "repository": "https://github.com/bmosigisi/generator-redux-saga-material",
   "license": "MIT"
 }
