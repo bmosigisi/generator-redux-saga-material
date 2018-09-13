@@ -3,6 +3,7 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const ncp = require('ncp').ncp;
+const fs = require('fs');
 
 module.exports = class extends Generator {
   prompting() {
@@ -16,17 +17,28 @@ module.exports = class extends Generator {
   async writing() {
     return new Promise(
       (resolve, reject) => {
-        ncp(
-          this.templatePath(),
-          this.destinationPath(),
-          (err) => {
-            if (err) {
-              this.log(err);
-              reject();
-            }
-            resolve();
+        // First, check if the current directory is empty.
+        fs.readdir(this.destinationRoot(), (err, files) => {
+          if (err) {
+            this.log('Could not read current directory');
+            reject();
+          } else if (files.length) {
+            this.log('Sorry, this directory is not empty');
+            reject();
+          } else {
+            ncp(
+              this.templatePath(),
+              this.destinationPath(),
+              (err) => {
+                if (err) {
+                  this.log(err);
+                  reject();
+                }
+                resolve();
+              }
+            );
           }
-        );
+        })
       }
     );
   }

@@ -1,4 +1,7 @@
-# generator-redux-saga-material [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# Generator-React-Redux-Saga-MaterialUI
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
+**generator-redux-saga-material**
 
 A bare-bones yeoman generator built from [create-react-app](https://github.com/facebook/create-react-app) with some additions to make it easy to kick-start and manage projects that use:
 
@@ -18,7 +21,7 @@ A bare-bones yeoman generator built from [create-react-app](https://github.com/f
 
 Prerequisites:
 
-- [node.js](https://nodejs.org/)) version >=8.0.0. You can use [nvm](https://github.com/creationix/nvm) to manage different node versions.
+- [Node.js](https://nodejs.org/) version >=8.0.0. You can use [nvm](https://github.com/creationix/nvm) to manage different node versions.
 - Install yeoman and generator-redux-saga-material globally.
 
 ```bash
@@ -45,9 +48,13 @@ yo redux-saga-material:component SomeComponentName
 yo redux-saga-material:container SomeContainerName
 ```
 
+## Contribute
+
+Contributions are welcome. Create issues for errors and requests, submit PRs against the *develop* branch.
+
 ## License
 
-MIT
+[MIT license](http://opensource.org/licenses/MIT)
 
 [npm-image]: https://badge.fury.io/js/generator-redux-saga-material.svg
 [npm-url]: https://npmjs.org/package/generator-redux-saga-material
