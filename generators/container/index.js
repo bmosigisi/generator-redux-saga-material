@@ -8,7 +8,7 @@ module.exports = class extends Generator {
     super(args, opts);
 
     this.argument('name', { type: String, required: false });
-    this.componentName = this._capitalize(
+    this.containerName = this._capitalize(
       humps.camelize(this.options.name)
     );
   }
@@ -17,13 +17,13 @@ module.exports = class extends Generator {
     const destination = path.join(
       this.destinationRoot(),
       'src',
-      'components',
-      `${this.componentName}.js`
+      'containers',
+      `${this.containerName}.js`
     );
     this.fs.copyTpl(
-      this.templatePath('component.js'),
+      this.templatePath('container.js'),
       this.destinationPath(destination),
-      { componentName: this.componentName }
+      { containerName: this.containerName }
     );
   }
 
