@@ -18,7 +18,7 @@ A bare-bones yeoman generator built from [create-react-app](https://github.com/f
 
 Prerequisites:
 
-- [node.js](https://nodejs.org/)) version >=6.0.0
+- [node.js](https://nodejs.org/)) version >=8.0.0. You can use [nvm](https://github.com/creationix/nvm) to manage different node versions.
 - Install yeoman and generator-redux-saga-material globally.
 
 ```bash
