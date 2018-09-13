@@ -38,8 +38,11 @@
     "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "humps": "^2.0.1",
+    "ncp": "^2.0.0",
+    "path": "^0.12.7",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {
@@ -65,17 +68,8 @@
       "node": true
     },
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "singleQuote": true,
-          "printWidth": 90
-        }
-      ]
-    },
-    "plugins": [
-      "prettier"
-    ]
+      "no-undef": 2
+    }
   },
   "scripts": {
     "pretest": "eslint .",

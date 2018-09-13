@@ -2,37 +2,40 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
+const ncp = require('ncp').ncp;
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the smashing ${chalk.red('generator-redux-saga-material')} generator!`)
+      yosay(
+        `Welcome to the smashing ${chalk.red('react redux redux-saga material-ui')} generator!`
+      )
     );
-
-    const prompts = [
-      {
-        type: 'confirm',
-        name: 'someAnswer',
-        message: 'Would you like to enable this option?',
-        default: true
-      }
-    ];
-
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
   }
 
-  writing() {
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+  async writing() {
+    return new Promise(
+      (resolve, reject) => {
+        ncp(
+          this.templatePath(),
+          this.destinationPath(),
+          (err) => {
+            if (err) {
+              this.log(err);
+              reject();
+            }
+            resolve();
+          }
+        );
+      }
     );
   }
 
   install() {
-    this.installDependencies();
+    this.installDependencies({
+      yarn: {force: true},
+      npm: false,
+      bower: false,
+    });
   }
 };

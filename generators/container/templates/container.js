@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-class App extends Component {
+class <%= containerName %> extends Component {
   static propTypes = {
     loading: PropTypes.bool.isRequired,
   };
@@ -23,10 +23,10 @@ class App extends Component {
     return (
       <div>
         { loading && <CircularProgress /> }
-        { !loading && <Typography variant="body2">Welcome to redux-saga-material!</Typography> }
+        { !loading && <Typography variant="body2"><%= containerName %></Typography> }
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(<%= containerName %>);
