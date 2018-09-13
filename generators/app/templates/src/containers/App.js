@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div>
         { loading && <CircularProgress /> }
-        { !loading && <Typography variant="body2">Entry point!</Typography> }
+        { !loading && <Typography variant="body2">Welcome to redux-saga-material!</Typography> }
       </div>
     );
   }
